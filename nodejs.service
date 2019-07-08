@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[Unit]
+Description=Nodejs
+
+[Service]
+User=backend
+WorkingDirectory=/home/backend
+ExecStart=node Index.js
+
+[Install]
+WantedBy=multi-user.target
+
