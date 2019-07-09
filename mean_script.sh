@@ -20,25 +20,25 @@ git_URL2="ewgijnewugfe"
 
 #create a backend user
 
-sudo useradd --create-home backend
-sudo usermod --shell /bin/bash backend
+#sudo useradd --create-home backend
+#sudo usermod --shell /bin/bash backend
 
 #git
 
 cd ../../backend/
-sudo git clone $git_URL1
+#sudo git clone $git_URL1
 cd T*/ 
 sudo git checkout Developer
 
 #install the nodejs systemd service script
-sudo cp $program.service /etc/systemd/system/
+sudo cp nodejs.service /etc/systemd/system/
 #load in new service for systemd
 sudo systemctl daemon-reload
 #start npm
 sudo npm install
 #start the nodejs service
-sudo systemctl start $program
-sudo systemctl enable $program
+sudo systemctl start nodejs
+sudo systemctl enable nodejs
 
 #installs
 #ng s -host 0.0.0.0 
