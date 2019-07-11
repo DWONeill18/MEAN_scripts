@@ -52,7 +52,7 @@ rm -rf ~/TeamAPoolProjectUI
 git clone ${git_URL2}
 cd TeamAPoolProjectUI/
 git checkout Developer
-npm install
+yes | npm install
 EOF
 yes | sudo npm -g install @angular/cli | yes
 
