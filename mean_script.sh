@@ -45,6 +45,8 @@ sudo cp angular.service /etc/systemd/system/
 
 
 # instal lthe UI ad the frontend user
+sudo useradd -m -s /bin/bash frontend
+
 sudo su - frontend << EOF
 rm -rf ~/TeamAPoolProjectUI
 git clone ${git_URL2}
@@ -52,7 +54,7 @@ cd TeamAPoolProjectUI/
 git checkout Developer
 npm install
 EOF
-
+exit
 yes | sudo npm -g install --save @angular/cli
 
 #load in new service for systemd
