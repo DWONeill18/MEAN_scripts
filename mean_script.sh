@@ -55,8 +55,9 @@ git checkout Developer
 npm install
 EOF
 exit
-yes | sudo npm -g install --save @angular/cli
+yes | sudo npm -g install @angular/cli | yes
 
+ng --version
 #load in new service for systemd
 sudo systemctl daemon-reload
 #start the nodejs service
