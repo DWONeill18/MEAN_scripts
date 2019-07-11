@@ -6,11 +6,12 @@ git_URL1=https://github.com/Nboaram/TeamAPoolProjectBackend.git
 git_URL2=https://github.com/Nboaram/TeamAPoolProjectUI.git
 
 #installs
-sudo apt install
-sudo apt upgrade
-sudo apt install git
+sudo apt -y install
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install git
 #sudo apt install screen
-sudo apt install curl
+sudo apt -y install curl
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt install -y mongodb
@@ -54,7 +55,7 @@ cd TeamAPoolProjectUI/
 git checkout Developer
 yes | npm install
 EOF
-yes | sudo npm -g install @angular/cli | yes
+yes | sudo npm install -g @angular/cli
 
 ng --version
 #load in new service for systemd
