@@ -54,7 +54,6 @@ cd TeamAPoolProjectUI/
 git checkout Developer
 npm install
 EOF
-exit
 yes | sudo npm -g install @angular/cli | yes
 
 ng --version
