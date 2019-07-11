@@ -35,7 +35,7 @@ sudo cp /home/terraform/MEAN_scripts/nodejs.service /etc/systemd/system/
 #load in new service for systemd
 sudo systemctl daemon-reload
 #start npm
-sudo npm install
+yes | sudo npm install
 #start the nodejs service
 sudo systemctl start nodejs
 sudo systemctl enable nodejs
