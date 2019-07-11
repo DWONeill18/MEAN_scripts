@@ -31,7 +31,7 @@ cd T*/
 sudo git checkout Developer
 
 #install the nodejs systemd service script
-sudo cp nodejs.service /etc/systemd/system/
+sudo cp /home/terraform/MEAN_scripts/nodejs.service /etc/systemd/system/
 #load in new service for systemd
 sudo systemctl daemon-reload
 #start npm
@@ -41,7 +41,7 @@ sudo systemctl start nodejs
 sudo systemctl enable nodejs
 
 #install the angular systemd service script
-sudo cp angular.service /etc/systemd/system/
+sudo cp /home/terraform/MEAN_scripts/angular.service /etc/systemd/system/
 
 
 # instal lthe UI ad the frontend user
