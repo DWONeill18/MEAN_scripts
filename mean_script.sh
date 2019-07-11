@@ -3,30 +3,30 @@
 #variables
 program=nodejs 
 git_URL1=https://github.com/Nboaram/TeamAPoolProjectBackend.git
-git_URL2="ewgijnewugfe"
+git_URL2=https://github.com/Nboaram/TeamAPoolProjectUI.git
 
 #installs
-#sudo apt install
-#sudo apt upgrade
-#sudo apt install git
+sudo apt install
+sudo apt upgrade
+sudo apt install git
 #sudo apt install screen
-#sudo apt install curl
-#curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-#sudo apt-get install -y nodejs
-#sudo apt install -y mongodb
-#node --version
-#npm --version
-#yes | npm install -y @angular/cli
+sudo apt install curl
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt install -y mongodb
+node --version
+npm --version
+#yes | npm install -g @angular/cli
 
 #create a backend user
 
-#sudo useradd --create-home backend
-#sudo usermod --shell /bin/bash backend
+sudo useradd --create-home backend
+sudo usermod --shell /bin/bash backend
 
 #git
 
 cd ../../backend/
-#sudo git clone $git_URL1
+sudo git clone $git_URL1
 cd T*/ 
 sudo git checkout Developer
 
@@ -40,6 +40,26 @@ sudo npm install
 sudo systemctl start nodejs
 sudo systemctl enable nodejs
 
+#install the angular systemd service script
+sudo cp angular.service /etc/systemd/system/
+
+
+# instal lthe UI ad the frontend user
+sudo su - frontend << EOF
+rm -rf ~/TeamAPoolProjectUI
+git clone ${git_URL2}
+cd TeamAPoolProjectUI/
+git checkout Developer
+npm install
+EOF
+
+yes | sudo npm -g install --save @angular/cli
+
+#load in new service for systemd
+sudo systemctl daemon-reload
+#start the nodejs service
+sudo systemctl enable angular
+sudo systemctl restart angular
 #installs
 #ng s -host 0.0.0.0 
 
